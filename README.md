@@ -135,24 +135,11 @@ rspec
 <!-- AUTHORS -->
 
 ## 👥 Authors <a name="authors"></a>
-
-👤 **Jean Emmanuel Cadet**
-
-- GitHub: [@jecode93](https://github.com/jecode93)
-- Twitter: [@jecode93](https://twitter.com/jecode93)
-- LinkedIn: [@jean-emmanuel-cadet](https://www.linkedin.com/in/jean-emmanuel-cadet)
-
 👤 **Mohamed Aden Ighe**
 
 - GitHub: [@katarighe](https://github.com/katarighe)
 - Twitter: [@katarighe](https://twitter.com/katarighe)
 - LinkedIn: [@mighe](https://linkedin.com/in/mighe)
-
-👤 **Nwanjoh Nalian Achei**
-
-- Github: [@NalianAchei2020](https://github.com/NalianAchei2020)
-- Linkedin: [Nalian Achei](https://www.linkedin.com/in/nalian-achei-683208275)
-- Twitter: [@NalianAchei](https://twitter.com/NalianAchei?t=E3ePLcJ7B45dBa8SBFIXDg&s=09)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
