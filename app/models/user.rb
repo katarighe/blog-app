@@ -11,7 +11,7 @@ class User < ApplicationRecord
   attribute :photo, :string
 
   # Methods
-  def three_recent_posts
+  def three_most_recent_posts
     posts.order(created_at: :desc).limit(3)
   end
 end

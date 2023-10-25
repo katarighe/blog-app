@@ -11,14 +11,14 @@ class Post < ApplicationRecord
   attribute :likes_counter, :integer, default: 0
 
   # Callbacks
-  after_save :update_posts_counter
+  after_save :update_user_posts_counter
 
   # Methods
-  def update_posts_counter
+  def update_user_posts_counter
     author.update(posts_counter: author.posts.count)
   end
 
-  def three_recent_posts
+  def three_most_recent_posts
     posts.order(created_at: :desc).limit(5)
   end
 end
