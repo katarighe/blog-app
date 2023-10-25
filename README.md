@@ -1,6 +1,3 @@
-# blog-app
-A Ruby blog app is a web application that allows users to create, edit, and publish blog posts. It is typically built using the Ruby on Rails framework, which is a popular choice for developing web applications because of its speed and ease of use.
-
 <a name="readme-top"></a>
 
 <!-- TABLE OF CONTENTS -->
@@ -27,20 +24,21 @@ A Ruby blog app is a web application that allows users to create, edit, and publ
 
 <!-- PROJECT DESCRIPTION -->
 
-# Catalog of My Things <a name="about-project"></a>
+# Blog App <a name="about-project"></a>
 
-**Catalog of My Things** is a software application that allows users to keep track of their personal belongings. It can be used to catalog any type of item, such as books, movies, music, games, tools, electronics, and more. Users can add items to their catalog by entering information such as the item's name, description, purchase date, and price. They can also add photos of their items.
+A **Ruby blog app** is a web application that allows users to create, edit, and publish blog posts. It is typically built using the Ruby on Rails framework, which is a popular choice for developing web applications because of its speed and ease of use.
 
-Once an item is added to the catalog, users can view and edit its details, as well as track its status (e.g., borrowed, lent, lost). Users can also generate reports to see a list of all their items, or to filter items by category, date, or other criteria.
+Moreover, the app is designed to serve as a typical blog website. It aims to deliver a complete and operational web platform where users can explore a catalog of articles and engage with them through actions like leaving comments and expressing their appreciation by liking posts..
 
 ## 🛠 Built With <a name="built-with"></a>
 
 ### Tech Stack <a name="tech-stack"></a>
 
 <details>
-  <summary>Ruby</summary>
+  <summary>Ruby on Rails</summary>
   <ul>
     <li><a href="https://www.ruby-lang.org/en/">Ruby</a></li>
+    <li><a href="https://rubyonrails.org/">Rails</a></li>
     <li><a href="https://rubocop.org/">Rubocop</li>
   </ul>
 </details>
@@ -51,20 +49,17 @@ Once an item is added to the catalog, users can view and edit its details, as we
 
 > The key features of this project includes.
 
-- **Ability to catalog any type of item**
-- **Ability to add photos of items**
-- **Ability to view and edit item details**
-- **Ability to track item status**
-- **Ability to generate reports**
+- **Display Users**
+- **Display Posts**
+- **Display Likes on Posts**
+- **Display Comments on Posts**
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 <!-- LIVE DEMO -->
 ## 🚀 Live Demo <a name="live-demo"></a>
 
-The Live Demo of this Capstone Project is available now on YouTube.
-
-- [Video Presentation on YouTube](https://youtu.be/H-geGNhPBuU) 
+The Live Demo of this Project will be available soo.
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -91,40 +86,32 @@ In order to run this project you need:
 Clone this repository to your desired folder by using this 👇️ command :
 
 ```
-git clone https://github.com/jecode93/catalog-of-my-things-capstone.git
+git clone https://github.com/katarighe/blog-app.git
 ```
 
 ### Install
 
-Go to the project directory:
+Install this project with:
 
+Example command:
+
+```sh
+  cd blog-app
 ```
-cd catalog-of-my-things-capstone
-```
-
-Before to run the program, verify that you have Ruby installed on your OS running the following command:
-
-```
- ruby -v
-```
-
-It should show you the version of Ruby ​​installed. If this does not happen and only an error message is displayed, then you should either verify your installation or install Ruby from scratch.
-
-[Download and Install Ruby](https://www.ruby-lang.org/en/downloads/)
 
 ### Usage
 
 To run the project, execute the following command:
 
-```
-ruby main.rb
+Example command:
+
+```sh
+  rails s
 ```
 
 ### Run tests
 
-```
-rspec
-```
+- Tests are not available yet, please stay tuned for it.
 
 ### Deployment
 
@@ -147,18 +134,19 @@ rspec
 
 ## 🔭 Future Features <a name="future-features"></a>
 
-> Here are some future features that could be added to the Catalog of My Things in the future.
+> Here are some future features that could be added to the Blog app in the future.
 
-- **Artificial intelligence (AI) powered features:** AI could be used to help users automatically identify and catalog items, as well as to provide recommendations for new items to add to their collection.
+- **AI-powered writing tools:** These tools can help bloggers with tasks such as brainstorming ideas, generating content, and editing their work.
 
-- **Integration with smart home devices:** The Catalog of My Things could be integrated with smart home devices, such as smart speakers and displays, to allow users to control their catalog using voice commands.
+- **Integration with other social media platforms:** This would allow bloggers to easily share their content on other platforms, such as Twitter, Facebook, and LinkedIn.
 
-- **Augmented reality (AR) and virtual reality (VR) features:** AR and VR could be used to create a more immersive experience for users, allowing them to view their catalog items in 3D or to even "walk through" their collection.
+- **Support for multiple languages:** This would make the Blog app accessible to a wider audience.
 
-- **Social media integration:** Users could be able to share their catalogs with others on social media, or to see what other people are collecting.
-Marketplace integration: Users could be able to buy and sell items from their catalogs through a marketplace integration.
+- **Advanced analytics features:** These features would help bloggers track the performance of their content and understand their audience better.
 
-These are just a few ideas for future features that could be added to the Catalog of My Things project. The specific features that are added will depend on the needs and wants of the users.
+- **Collaboration tools:** These tools would allow bloggers to collaborate with other writers, editors, and designers.
+
+These are just a few ideas for future features that could be added to the Blog app. The specific features that are added will depend on the needs and wants of the users.
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
