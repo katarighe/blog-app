@@ -1,8 +1,8 @@
 class User < ApplicationRecord
   # Associations
-  has_many :posts, foreign_key: :author_id
-  has_many :comments
-  has_many :likes
+  has_many :post, foreign_key: 'author_id'
+  has_many :comment
+  has_many :like
 
   # Attributes
   attribute :name, :string
