@@ -413,3 +413,4 @@ FOREIGN KEY ("post_id")
   [1m[36mTRANSACTION (1.8ms)[0m  [1m[35mCOMMIT[0m
   [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mBEGIN[0m
   [1m[36mComment Destroy (5.1ms)[0m  [1m[31mDELETE FROM "comments" WHERE "comments"."id" = $1[0m  [["id", 17]]
+  [1m[36mTRANSACTION (2.1ms)[0m  [1m[35mCOMMIT[0m
