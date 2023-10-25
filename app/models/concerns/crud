@@ -25,6 +25,13 @@
 # Post.find_by(text: 'This is my third post').update(title: 'I am not a teacher')
 # Comment.where(user: third_user).each { |comment| comment.update(post: second_post)}
 
+# user = User.find_by(bio: 'Teacher from Poland.')
+
+# user.posts.each do |post|
+  # post.destroy
+# end
+# user.destroy
+
 # User.find_by(bio: 'Teacher from Poland.').delete
 # Post.find_by(title: 'I am not a teacher').delete
 # Comment.where(user: second_user).destroy_all
