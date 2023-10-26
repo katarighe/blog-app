@@ -2,7 +2,7 @@ require 'rails_helper'
 
 RSpec.describe Comment, Type :model do
     describe 'comment model' do
-        first_user = User.new(name: 'Lilly', photo: 'https://unsplash.com/photos/F_-0BxGuVvo',
+        first_user = User.new(name: 'Lily', photo: 'https://unsplash.com/photos/F_-0BxGuVvo',
             bio: 'Teacher from Poland.')
             first_post = Post.new(author: first_user, title: 'Hello', text: 'This is my first post')
             comment = Comment.new(post: first_post, author: first_user, text: 'Hi Tom!')
