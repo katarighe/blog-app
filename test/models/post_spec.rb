@@ -39,11 +39,11 @@ RSpec.describe Post, type: :model do
       8.times { |comment_i| Comment.create(user: @author, post: @post, text: (comment_i + 1).to_s) }
     end
 
-    it 'returns three comments' do
+    it 'returns at least three recent comments' do
       expect(@post.five_most_recent_comments.length).to eq 5
     end
 
-    it 'returns most recent comments with the following texts 4, 5, 6, 7, 8' do
+    it 'returns the five most recent comments with the following texts 4, 5, 6, 7, 8' do
       texts = []
       @post.five_most_recent_comments.each do |comment|
         texts.push(comment.text.to_i)
