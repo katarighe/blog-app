@@ -1,7 +1,9 @@
 class Comment < ApplicationRecord
   # Associations
-  belongs_to :post
   belongs_to :user
+  belongs_to :post
+
+  # Callbacks
   after_save :update_post_comments_counter
 
   # Methods
