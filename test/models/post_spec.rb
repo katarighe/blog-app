@@ -54,7 +54,7 @@ RSpec.describe Post, type: :model do
 
   context '#update_user_posts_counter' do
     before :all do
-      8.times { Post.create(author: @author, title: 'Harry Potter') }
+      8.times { Post.create(author: @author, title: 'Seven Years Later') }
     end
 
     it 'keeps track of posts and equals 9' do
