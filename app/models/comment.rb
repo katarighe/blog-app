@@ -1,5 +1,5 @@
 class Comment < ApplicationRecord
-  # Associations  
+  # Associations
   belongs_to :user
   belongs_to :post
 
