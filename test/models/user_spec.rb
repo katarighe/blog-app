@@ -33,7 +33,7 @@ RSpec.describe User, type: :model do
       5.times { |post_i| Post.create(author: @user, title: (post_i + 1).to_s) }
     end
 
-    it 'returns three posts' do
+    it 'returns three most recent posts' do
       expect(@user.three_most_recent_posts.length).to eq 3
     end
 
