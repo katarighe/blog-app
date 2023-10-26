@@ -19,7 +19,7 @@ RSpec.describe Comment, type: :model do
       expect(Comment.new(post: @post)).to_not be_valid
     end
 
-    context '#update_comments_counter' do
+    context '#update_post_comments_counter' do
       before :all do
         8.times { |comment_i| Comment.create(user: @user, post: @post, text: (comment_i + 1).to_s) }
       end
