@@ -18,19 +18,19 @@ RSpec.describe Post, type: :model do
   end
 
   it 'is not valid with a non-numeric comments_counter' do
-    expect(Post.new(author: @author, title: 'Harry Potter', comments_counter: 'five')).to_not be_valid
+    expect(Post.new(author: @author, title: 'Seven Years Later', comments_counter: 'five')).to_not be_valid
   end
 
   it 'is not valid with a float comments_counter' do
-    expect(Post.new(author: @author, title: 'Harry Potter', comments_counter: 1.5)).to_not be_valid
+    expect(Post.new(author: @author, title: 'Seven Years Later', comments_counter: 1.5)).to_not be_valid
   end
 
   it 'is not valid with a negative comments_counter' do
-    expect(Post.new(author: @author, title: 'Harry Potter', comments_counter: -1)).to_not be_valid
+    expect(Post.new(author: @author, title: 'Seven Years Later', comments_counter: -1)).to_not be_valid
   end
 
   it 'is valid with a integer comments_counter' do
-    expect(Post.new(author: @author, title: 'Harry Potter', comments_counter: 5)).to be_valid
+    expect(Post.new(author: @author, title: 'Seven Years Later', comments_counter: 5)).to be_valid
   end
 
   context '#five_most_recent_comments' do
