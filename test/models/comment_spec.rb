@@ -1,29 +1,32 @@
 require 'rails_helper'
 
-RSpec.describe Comment, Type :model do
-    describe 'comment model' do
-        first_user = User.new(name: 'Lily', photo: 'https://unsplash.com/photos/F_-0BxGuVvo',
-            bio: 'Teacher from Poland.')
-            first_post = Post.new(author: first_user, title: 'Hello', text: 'This is my first post')
-            comment = Comment.new(post: first_post, author: first_user, text: 'Hi Tom!')
+RSpec.describe Comment, type: :model do
+    before :all do
+        @user = User.create(name: 'Lily')
+        @post = Post.create(author: @user, title: 'Title')
+    end
 
-            it 'Comment object to be valid' do
-                expect(comment).to be_valid
+    context '#create' do
+        it 'is valid with the existing user and post' do
+          expect(Comment.new(user: @user, post: @post)).to be_valid
+        end
+
+        it 'is not valid without the post' do
+            expect(Comment.new(user: @user)).to_not be_valid
+        end
+
+        it 'is not valid without the user' do
+            expect(Comment.new(post: @post)).to_not be_valid
+        end
+
+        context '#update_comments_counter' do
+            before :all do
+              8.times { |comment_i| Comment.create(user: @user, post: @post, text: (comment_i + 1).to_s) }
             end
 
-            it 'Comment text should be present' do
-                comment.post = nil
-                expect(comment).to_not be_valid
-            end
-            
-            it 'Comment text should be present' do
-                comment.post = nil
-                expect(comment).to_not be_valid
-            end
-
-            it 'Comment text should be present' do
-                comment.text = nil
-                expect(comment).to_not be_valid
+            it 'keeps track of the comments and equals 8' do
+                expect(@post.comments_counter).to eq 8
             end
         end
+    end
 end
