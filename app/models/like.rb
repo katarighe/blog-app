@@ -1,7 +1,7 @@
 class Like < ApplicationRecord
   # Associations
-  belongs_to :post
   belongs_to :user
+  belongs_to :post
 
   # Callbacks
   after_save :update_post_likes_counter
