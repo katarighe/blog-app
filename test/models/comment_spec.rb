@@ -24,7 +24,7 @@ RSpec.describe Comment, type: :model do
         8.times { |comment_i| Comment.create(user: @user, post: @post, text: (comment_i + 1).to_s) }
       end
 
-      it 'keeps track of the comments and equals 8' do
+      it 'keeps track of the comments and equals to 8' do
         expect(@post.comments_counter).to eq 8
       end
     end
