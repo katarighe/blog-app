@@ -19,7 +19,7 @@ RSpec.describe 'Posts', type: :request do
     end
 
     it 'renders as the right placeholder' do
-      expect(response.body).to include('<h1>In this section, here is a list of users.</h1>')
+      expect(response.body).to include('<h1>Here is a list of users.</h1>')
     end
   end
 
@@ -43,7 +43,7 @@ RSpec.describe 'Posts', type: :request do
     end
 
     it 'renders as the right placeholder' do
-      expect(response.body).to include('<h1>In this section, here is a selected user from the list.</h1>')
+      expect(response.body).to include('<h1>Here is a selected user from the list.</h1>')
     end
   end
 end
