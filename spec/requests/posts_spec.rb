@@ -19,7 +19,8 @@ RSpec.describe 'Posts', type: :request do
     end
 
     it 'renders as the right placeholder' do
-      expect(response.body).to include('<h1>In this section, here is a list of the posts shown for a designated user.</h1>')
+      expect(response.body).to include('<h1>In this section, here is a list of the posts
+        shown for a designated user.</h1>')
     end
   end
 
