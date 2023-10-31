@@ -27,7 +27,7 @@ RSpec.describe 'Posts', type: :request do
     let(:valid_attributes) { { 'name' => 'Lily' } }
     let(:user) { User.create! valid_attributes }
     before :each do
-        get user_url(user)
+      get user_url(user)
     end
 
     it 'returns as a successful response if status is correct' do
