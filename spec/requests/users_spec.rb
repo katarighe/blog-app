@@ -24,12 +24,10 @@ RSpec.describe 'Posts', type: :request do
   end
 
   context 'GET /show' do
-    let(:user) { User.create(name: 'Lily') }
-    let(:valid_attributes) { { 'author' => user, 'title' => 'Title' } }
-    let(:post) { Post.create! valid_attributes }
-
+    let(:valid_attributes) { { 'name' => 'Lily' } }
+    let(:user) { User.create! valid_attributes }
     before :each do
-      get "/users/:user_id/posts/#{post.id}"
+        get user_url(user)
     end
 
     it 'returns as a successful response' do
