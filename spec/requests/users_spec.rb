@@ -3,7 +3,7 @@ require 'rails_helper'
 RSpec.describe 'Posts', type: :request do
   context 'GET /index' do
     before :each do
-      get '/users/:user_id/posts'
+      get users_path
     end
 
     it 'returns as a successful response' do
@@ -19,7 +19,7 @@ RSpec.describe 'Posts', type: :request do
     end
 
     it 'renders as the right placeholder' do
-      expect(response.body).to include('<h1>In this section, here is a list of the posts shown for a designated user.</h1>')
+      expect(response.body).to include('<h1>In this section, here is a list of users.</h1>')
     end
   end
 
@@ -45,7 +45,7 @@ RSpec.describe 'Posts', type: :request do
     end
 
     it 'renders as the right placeholder' do
-      expect(response.body).to include('<h1>In this section, here is a selected post with for a designated user.</h1>')
+      expect(response.body).to include('<h1>In this section, here is a selected user from the list.</h1>')
     end
   end
 end
