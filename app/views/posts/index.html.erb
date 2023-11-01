@@ -1,22 +1,22 @@
-<div id= "user-container">
-  <%= render partial: "users/user_info", locals: { user: @user } %>
+<div id="user-container">
+   <%= render partial: "users/user_info", locals: { user: @user } %>
 </div>
 
-<ul id= "post-container">
+<ul id="post-container">
   <% @posts.each_with_index do |post, i| %>
     <li>
-     <%= link_to "/users/#{@user.id}/posts/#{post.id}", id: "post" do %>
-       <%= render partial: "posts/post_info", locals: { post: post } %>
-    <%= end %>
-    <ul id = "comment-container">
-      <% post.five_recent_comments.each do |comment| %>
-        <li id="comment">
-          <p><%= comment.user.name %>: <%= comment.text %></p>
-        </li>
-      <%= end %>
-    </ul>
-   </li>
- <% end %>
+      <%= link_to "/users/#{@user.id}/posts/#{post.id}", id: "post" do %>
+        <%= render partial: "posts/post_info", locals: { post: post } %>
+      <% end %>
+      <ul id="comment-container">
+        <% post.five_most_recent_comments.each do |comment| %>
+          <li id="comment">
+            <p><%= comment.user.name %>: <%= comment.text %></p>
+          </li>
+        <% end %>
+      </ul>
+    </li>
+  <% end %>
 </ul>
 
 <%= will_paginate %>
