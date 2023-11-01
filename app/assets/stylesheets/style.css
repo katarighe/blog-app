@@ -87,13 +87,13 @@ h3 {
 
 .pagination a {
   text-decoration: underline;
-  color: #6d65db;
+  color: #3139ad;
 }
 
 #comment-container,
 #user-biography {
   border: 1px solid #9f9ae7;
-  background-color: #3b3a47;
+  background-color: #665ae7;
   color: #f0f0f0;
 }
 
