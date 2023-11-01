@@ -68,6 +68,12 @@ li {
   flex: 1;
 }
 
+.see-all-posts-button {
+  display: inline-block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
 h2 {
   color: #f0f0f0;
 }
