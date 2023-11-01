@@ -36,7 +36,7 @@ li {
 #container,
 #post-container {
   display: grid;
-  height: 20rem;
+  height: 28rem;
 }
 
 #user-text,
@@ -102,6 +102,7 @@ h3 {
   border: 1px solid #9f9ae7;
   background-color: #665ae7;
   color: #f0f0f0;
+  height: 10rem;
 }
 
 #user_photo {
