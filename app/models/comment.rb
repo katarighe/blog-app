@@ -1,7 +1,7 @@
 class Comment < ApplicationRecord
   # Associations
   belongs_to :user
-  belongs_to :post
+  belongs_to :post, foreign_key: 'user_id'
 
   # Callbacks
   after_save :update_post_comments_counter

@@ -1,0 +1,114 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+a,
+img {
+  text-decoration: none;
+  color: #ffff;
+}
+
+li {
+  list-style-type: none;
+}
+
+#post {
+  display: block;
+}
+
+#container {
+  background-color: #ac5cf7;
+  padding: 1.5rem;
+  min-height: 100vh;
+}
+
+#user-container {
+  display: flex;
+  height: 7rem;
+}
+
+#container,
+#post-container {
+  display: grid;
+  height: 28rem;
+}
+
+#user-text,
+#post {
+  border: 1px solid #5e5f61;
+  background-color: #3139ad;
+  color: #d1d1d1;
+}
+
+#user-biography,
+#post,
+#comment-container {
+  padding: 0.5rem;
+}
+
+#user-text {
+  padding: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex: 5;
+}
+
+#user-text p {
+  align-self: flex-end;
+}
+
+#user-photo {
+  flex: 1;
+}
+
+.see-all-posts-button {
+  display: inline-block;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 20px;
+}
+
+h2 {
+  color: #f0f0f0;
+}
+
+h3 {
+  margin-bottom: 1rem;
+}
+
+.counter {
+  text-align: right;
+}
+
+.pagination {
+  margin: 0 auto;
+  color: #f0f0f0;
+}
+
+.pagination a {
+  text-decoration: underline;
+  color: #3139ad;
+}
+
+#comment-container,
+#user-biography {
+  border: 1px solid #9f9ae7;
+  background-color: #665ae7;
+  color: #f0f0f0;
+  height: 10rem;
+}
+
+#user_photo {
+  flex: 1;
+}
+
+#comment {
+  font-style: italic;
+}

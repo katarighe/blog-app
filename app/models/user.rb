@@ -1,8 +1,8 @@
 class User < ApplicationRecord
   # Associations
   has_many :post, foreign_key: 'author_id'
-  has_many :comment, foreign_key: 'author_id'
-  has_many :like, foreign_key: 'author_id'
+  has_many :comments
+  has_many :likes
 
   # Validations
   validates :name, presence: true
