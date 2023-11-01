@@ -4,16 +4,16 @@
 
 <div id="user-biography">
   <h3>Biography</h3>
-  <p><%= @user.bio %>
+  <p><%= @user.bio %></p>
 </div>
 
 <div id="post-container">
   <% @user.three_most_recent_posts.each_with_index do |post, i| %>
-   <li>
-     <%= link_to "/users/#{@user.id}/posts/#{post.id}", id: "post" do %>
-       <%= render partial: "posts/post_info", locals: { post: post } %>
-     <% end %>
-   </li>
+    <li>
+      <%= link_to "/users/#{@user.id}/posts/#{post.id}", id: "post" do %>
+        <%= render partial: "posts/post_info", locals: { post: post } %>
+      <% end %>
+    </li>
   <% end %>
 </div>
 
