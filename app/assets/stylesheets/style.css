@@ -23,7 +23,7 @@ li {
 }
 
 #container {
-  background-color: #868484;
+  background-color: #ac5cf7;
   padding: 1.5rem;
   min-height: 100vh;
 }
@@ -35,14 +35,14 @@ li {
 
 #container,
 #post-container {
-  display: flex;
+  display: grid;
   height: 5rem;
 }
 
 #user-text,
 #post {
   border: 1px solid #5e5f61;
-  background-color: #2f3031;
+  background-color: #3139ad;
   color: #d1d1d1;
 }
 
@@ -87,7 +87,7 @@ h3 {
 
 .pagination a {
   text-decoration: underline;
-  color: #9f9ae7;
+  color: #6d65db;
 }
 
 #comment-container,
