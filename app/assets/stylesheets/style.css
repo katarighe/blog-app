@@ -14,6 +14,10 @@ img {
   color: #ffff;
 }
 
+li {
+  list-style-type: none;
+}
+
 #post {
   display: block;
 }
@@ -22,6 +26,11 @@ img {
   background-color: #363636;
   padding: 1.5rem;
   min-height: 100vh;
+}
+
+#user-container {
+  display: flex;
+  height: 5rem;
 }
 
 #container,
@@ -37,7 +46,7 @@ img {
   color: #d1d1d1;
 }
 
-#user-bio,
+#user-biography,
 #post,
 #comment-container {
   padding: 0.5rem;
@@ -69,6 +78,27 @@ h3 {
 
 .counter {
   text-align: left;
+}
+
+.pagination {
+  margin: 0 auto;
+  color: #f0f0f0;
+}
+
+.pagination a {
+  text-decoration: underline;
+  color: rgb(159, 154, 231);
+}
+
+#comment-container,
+#user-biography {
+  border: 1px solid #9f9ae7;
+  background-color: #3b3a47;
+  color: #f0f0f0;
+}
+
+#user_photo {
+  flex: 1;
 }
 
 #comment {
