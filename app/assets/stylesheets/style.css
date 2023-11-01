@@ -30,7 +30,7 @@ li {
 
 #user-container {
   display: flex;
-  height: 5rem;
+  height: 7rem;
 }
 
 #container,
@@ -57,7 +57,7 @@ li {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  flex: 4;
+  flex: 5;
 }
 
 #user-text p {
