@@ -3,8 +3,8 @@
 <% flash.each do |name, msg| -%>
   <%= content_tag :div, msg, class: name %>
 <% end -%>
+
 <%= form_with model: [:user, :post, @comment], data: { turbo: false }, local: true do |f| %>
-  
   <div>
     <%= f.label :text %><br>
     <%= f.text_field :text %><br>
