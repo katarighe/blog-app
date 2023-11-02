@@ -5,7 +5,7 @@ class Comments
   end
 
   def create
-    @comment = Post.new(params.require(:post).permit(:title, :text))
+    @comment = Comment.new(params.require(:comment).permit(:text, :user_id, :post_id))
     @comment.user = current_user
     if @comment.save
       flash[:sucess] = 'Comment created successfuly!'
