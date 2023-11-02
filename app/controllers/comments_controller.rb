@@ -14,5 +14,11 @@ class CommentsController < ApplicationController
       flash.now[:error] = 'Error, the comment cannot be created!'
       render :new, locals: { comment: @comment }
     end
+    
+    private 
+    
+    def comment_params
+      params.require(:comment).permit(:text)
+    end
   end
 end
