@@ -25,7 +25,7 @@ class PostsController < ApplicationController
       render :new, locals: { post: @post }
     end
   end
-  
+
   private
 
   def post_params
