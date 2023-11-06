@@ -23,7 +23,7 @@ RSpec.feature 'User index page', type: :feature do
     end
   end
 
-  scenario 'When I click on a user, I am redirected to that user\'s show page' do
+  scenario 'When I click on a user, I am redirected to that users show page' do
     visit users_path
     User.all.each do |user|
       find("#user_#{user.id}").click
