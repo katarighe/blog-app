@@ -3,6 +3,7 @@ require 'rails_helper'
 RSpec.describe 'Users', type: :request do
   context 'GET /index' do
     before :each do
+      User.create(name: 'Lily')
       get users_path
     end
 
@@ -19,7 +20,7 @@ RSpec.describe 'Users', type: :request do
     end
 
     it 'renders as the right placeholder which the response body includes correct placeholder text' do
-      expect(response.body).to include('<h1>Here is a list of users.</h1>')
+      expect(response.body).to include('<h2>Lily</h2>')
     end
   end
 
@@ -43,7 +44,9 @@ RSpec.describe 'Users', type: :request do
     end
 
     it 'renders as the right placeholder which the response body includes correct placeholder text' do
-      expect(response.body).to include('<h1>Here is a selected user from the list.</h1>')
+      expect(response.body).to include('<h2>Lily</h2>')
+      expect(response.body).to include('<p>Number of posts: 0</p>')
+      expect(response.body).to include('<h3>Biography</h3>')
     end
   end
 end
