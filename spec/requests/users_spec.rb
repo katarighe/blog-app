@@ -46,7 +46,7 @@ RSpec.describe 'Users', type: :request do
     it 'renders as the right placeholder which the response body includes correct placeholder text' do
       expect(response.body).to include('<h2>Lily</h2>')
       expect(response.body).to include('<p>Number of posts: 0</p>')
-      expect(response.body).to include('<h3>Bio</h3>')
+      expect(response.body).to include('<h3>Biography</h3>')
     end
   end
 end
