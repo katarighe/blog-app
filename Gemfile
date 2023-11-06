@@ -52,7 +52,6 @@ group :development, :test do
   gem 'rails-controller-testing'
   gem 'rspec-rails'
   gem 'will_paginate'
-  gem 'factory_bot_rails'
 end
 
 group :development do
