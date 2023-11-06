@@ -8,23 +8,23 @@ RSpec.describe 'User show page', type: :feature do
     visit "/users/#{user.id}"
   end
 
-  it 'shows the user\'s profile picture' do
+  it 'can see the user\'s profile picture' do
     expect(page).to have_css("img[src='#{user.photo}']")
   end
 
-  it 'shows the user\'s username' do
+  it 'can see the user\'s username' do
     expect(page).to have_content(user.name)
   end
 
-  it 'shows the number of posts the user has written' do
+  it 'can see the number of posts the user has written' do
     expect(page).to have_content('Number of posts: 1')
   end
 
-  it 'shows the user\'s bio' do
+  it 'can see the user\'s bio' do
     expect(page).to have_content(user.bio)
   end
 
-  it 'shows a button that lets me view all of a user\'s posts' do
+  it 'can see a button that lets me view all of a user\'s posts' do
     expect(page).to have_link('See all posts', href: "/users/#{user.id}/posts?page=1")
   end
 
