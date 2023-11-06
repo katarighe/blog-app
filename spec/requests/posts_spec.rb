@@ -2,6 +2,8 @@ require 'rails_helper'
 
 RSpec.describe 'Posts', type: :request do
   context 'GET /index' do
+    let(:user) { User.create(name: 'Lily') }
+
     before :each do
       get '/users/:user_id/posts'
     end
@@ -19,7 +21,11 @@ RSpec.describe 'Posts', type: :request do
     end
 
     it 'renders as the right placeholder which the response body includes correct placeholder text' do
-      expect(response.body).to include('<h1>Here is a list of the posts shown for a designated user.</h1>')
+      expect(response.body).to include('<h2>Lily</h2>')
+      expect(response.body).to include('<p>Number of posts: 1</p>')
+      expect(response.body).to include('<h3>Title</h3>')
+      expect(response.body).to include('<p></p>')
+      expect(response.body).to include(`<p class="counter">\nComments: 0, Likes: 0\n</p>`)
     end
   end
 
@@ -45,7 +51,9 @@ RSpec.describe 'Posts', type: :request do
     end
 
     it 'renders as the right placeholder which the response body includes correct placeholder text' do
-      expect(response.body).to include('<h1>Here is a selected post with for a designated user.</h1>')
+      expect(response.body).to include('<h3>Title by Lily</h3>')
+      expect(response.body).to include('<p></p>')
+      expect(response.body).to include(`<p class="counter">\nComments: 0, Likes: 0\n</p>`)
     end
   end
 end
