@@ -71,8 +71,3 @@ RSpec.describe 'When I open user show page', type: :system do
     end
   end
 end
-
-
-
-
-
