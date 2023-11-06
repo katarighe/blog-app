@@ -128,6 +128,12 @@ Example command:
 - Twitter: [@katarighe](https://twitter.com/katarighe)
 - LinkedIn: [@mighe](https://linkedin.com/in/mighe)
 
+👤 **Jean Emmanuel Cadet**
+
+- GitHub: [@jecode93](https://github.com/jecode93)
+- Twitter: [@jecode93](https://twitter.com/jecode93)
+- LinkedIn: [jean-emmanuel-cadet](https://www.linkedin.com/in/jean-emmanuel-cadet/)
+
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 <!-- FUTURE FEATURES -->
