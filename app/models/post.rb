@@ -2,7 +2,7 @@ class Post < ApplicationRecord
   # Associations
   has_many :comments
   has_many :likes
-  belongs_to :author, class_name: 'User'
+  belongs_to :author, class_name: 'User', foreign_key: 'author_id'
 
   # Validations
   validates :title, presence: true, length: { maximum: 250 }
@@ -18,6 +18,6 @@ class Post < ApplicationRecord
   end
 
   def five_most_recent_comments
-    Comment.where(post_id: id).order(created_at: :desc).limit(5)
+    comments.limit(5).order(created_at: :desc)
   end
 end
