@@ -1,5 +1,4 @@
 require "active_support/core_ext/integer/time"
-require 'bullet'
 
 # The test environment is used exclusively to run your application's
 # test suite. You never need to work with it otherwise. Remember that
@@ -8,11 +7,6 @@ require 'bullet'
 
 Rails.application.configure do
   # Settings specified here will take precedence over those in config/application.rb.
-  config.after_initialize do
-    Bullet.enable        = true
-    Bullet.bullet_logger = true
-    Bullet.raise         = true # raise an error if n+1 query occurs
-  end
 
   # While tests run files are not watched, reloading is not necessary.
   config.enable_reloading = false
