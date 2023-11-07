@@ -1,35 +1,23 @@
-<% user = User.find(params[:user_id]) %>
-
-<div class="my-4 p-5 rounded border border-1">
-  <div class="d-flex align-items-center justify-content-between">
-    <h3><%= @post.title %> by <%= user.name %></h3>
-    <div class="text-end">
-      <span class="border border-1 p-1 me-4 bg-info">
-        Comments: <%= @post.comments_counter.nil? ? " 0 " :
-        @post.comments_counter %>
-      </span>
-      <span class="border border-1 p-1 bg-info">
-        Likes: <%= @post.likes_counter.nil? ? "0" : @post.likes_counter %>
-      </span>
-    </div>
-  </div>
-  <hr>
-  <p class="pt-5"><%= @post.text %></p>
+<div class="post" >
+  <h3><%= @post.title %> by <%= @post.author.name %></h3>
+  <p class="counter">
+    Comments: <%= @post.comments_counter.to_i %>, Likes: <%= @post.likes_counter.to_i %>
+  </p>
+  <p><%= @post.text %></p>
 </div>
 
-<div class="text-success">
-  <% flash.each do |name, msg| -%>
+<% flash.each do |name, msg| -%>
   <%= content_tag :div, msg, class: name %>
-  <% end -%>
-</div>
+<% end -%>
 
-<div class="border border-1 p-2">
-  <% @post.all_comments.each do |post| %>
-    <p><%= post.nil? ? "No comment" : user.name + " : " + post.text %></p>
+<ul class="comments-container">
+  <% @post.comments.includes([:user]).each do |comment| %>
+    <li class="comment">
+      <p><%= comment.user.name %>: <%= comment.text %></p>
+    </li>
   <% end %>
-</div>
+</ul>
 
-<div class="d-flex my-2">
-  <%= render partial: "likes/like_action", locals: { post: @post }, class: 'mx-4' %>
-  <%= link_to 'New Comment', new_user_post_comment_path(post_id: params[:id]), class: "mx-4 btn btn-primary" %>
-</div>
+<%= render partial: "likes/like_action", locals: { post: @post } %>
+
+<%= link_to 'New Comment', new_user_post_comment_path(post_id: params[:id]) %>
