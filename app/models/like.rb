@@ -1,13 +1,11 @@
 class Like < ApplicationRecord
-  # Associations
   belongs_to :user
   belongs_to :post
+  after_save :update_likes_counter
 
-  # Callbacks
-  after_save :update_post_likes_counter
+  private
 
-  # Methods
-  def update_post_likes_counter
+  def update_likes_counter
     post.increment!(:likes_counter)
   end
 end

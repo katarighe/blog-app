@@ -1,29 +1,35 @@
-<div class="user">
-   <%= render partial: "users/user_info", locals: { user: @user } %>
+<% user = User.find(params[:user_id]) %>
+
+<div class="my-4 p-5 rounded border border-1">
+  <div class="d-flex align-items-center justify-content-between">
+    <h3><%= @post.title %> by <%= user.name %></h3>
+    <div class="text-end">
+      <span class="border border-1 p-1 me-4 bg-info">
+        Comments: <%= @post.comments_counter.nil? ? " 0 " :
+        @post.comments_counter %>
+      </span>
+      <span class="border border-1 p-1 bg-info">
+        Likes: <%= @post.likes_counter.nil? ? "0" : @post.likes_counter %>
+      </span>
+    </div>
+  </div>
+  <hr>
+  <p class="pt-5"><%= @post.text %></p>
 </div>
 
-<% flash.each do |name, msg| -%>
+<div class="text-success">
+  <% flash.each do |name, msg| -%>
   <%= content_tag :div, msg, class: name %>
-<% end -%>
+  <% end -%>
+</div>
 
-<%= link_to 'Create New Post', new_user_post_path %>
-
-<ul id="posts-container">
-  <% @posts.each_with_index do |post, i| %>
-    <li>
-      <%= link_to "/users/#{@user.id}/posts/#{post.id}", class: "post" do %>
-        <%= render partial: "posts/post_info", locals: { post: post } %>
-      <% end %>
-      <ul class="comments-container">
-       <h3>Comments:</h3>
-        <% post.five_most_recent_comments.includes([:user]).each do |comment| %>
-          <li clas="comment">
-            <p><%= comment.user.name %>: <%= comment.text %></p>
-          </li>
-        <% end %>
-      </ul>
-    </li>
+<div class="border border-1 p-2">
+  <% @post.all_comments.each do |post| %>
+    <p><%= post.nil? ? "No comment" : user.name + " : " + post.text %></p>
   <% end %>
-</ul>
+</div>
 
-<%= will_paginate %>
+<div class="d-flex my-2">
+  <%= render partial: "likes/like_action", locals: { post: @post }, class: 'mx-4' %>
+  <%= link_to 'New Comment', new_user_post_comment_path(post_id: params[:id]), class: "mx-4 btn btn-primary" %>
+</div>

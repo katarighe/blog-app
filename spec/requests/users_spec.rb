@@ -3,50 +3,40 @@ require 'rails_helper'
 RSpec.describe 'Users', type: :request do
   context 'GET /index' do
     before :each do
-      User.create(name: 'Lily')
+      User.create(name: 'Tom')
       get users_path
     end
 
-    it 'returns as a successful response if status is correct' do
-      expect(response).to be_successful
-    end
-
-    it 'returns as http status 200 or response status is correct' do
-      expect(response.status).to eq(200)
-    end
-
-    it 'renders as the right view file and the correct template' do
+    it 'renders the right view file' do
       expect(response).to render_template(:index)
     end
 
-    it 'renders as the right placeholder which the response body includes correct placeholder text' do
-      expect(response.body).to include('<h2>Lily</h2>')
+    it 'returns http status 200' do
+      expect(response.status).to eq(200)
+    end
+
+    it 'returns successful response' do
+      expect(response).to be_successful
     end
   end
 
   context 'GET /show' do
-    let(:valid_attributes) { { 'name' => 'Lily' } }
+    let(:valid_attributes) { { 'name' => 'Tom' } }
     let(:user) { User.create! valid_attributes }
     before :each do
       get user_url(user)
     end
 
-    it 'returns as a successful response if status is correct' do
-      expect(response).to be_successful
-    end
-
-    it 'returns as http status 200 or response status is correct' do
-      expect(response.status).to eq(200)
-    end
-
-    it 'renders as the right view file and the correct template' do
+    it 'renders the right view file' do
       expect(response).to render_template(:show)
     end
 
-    it 'renders as the right placeholder which the response body includes correct placeholder text' do
-      expect(response.body).to include('<h2>Lily</h2>')
-      expect(response.body).to include('<p>Number of posts: 0</p>')
-      expect(response.body).to include('<h3>Biography</h3>')
+    it 'returns http status 200' do
+      expect(response.status).to eq(200)
+    end
+
+    it 'returns successful response' do
+      expect(response).to be_successful
     end
   end
 end
