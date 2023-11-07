@@ -23,18 +23,18 @@ RSpec.describe 'When I open user show page', type: :system do
 
   it 'I can see how many comments it has.' do
     post = FactoryBot.create(:post)
-    FactoryBot.create_list(:comment, 6, post: post)
+    FactoryBot.create_list(:comment, 6, post:)
     visit user_post_path(post.author, post)
     sleep(1)
-    expect(page).to have_content("Comments: 6")
+    expect(page).to have_content('Comments: 6')
   end
 
   it 'I can see how many likes it has.' do
     post = FactoryBot.create(:post)
-    FactoryBot.create_list(:like, 20, post: post)
+    FactoryBot.create_list(:like, 20, post:)
     visit user_post_path(post.author, post)
     sleep(1)
-    expect(page).to have_content("Likes: 20")
+    expect(page).to have_content('Likes: 20')
   end
 
   it 'I can see the post body.' do
@@ -46,8 +46,8 @@ RSpec.describe 'When I open user show page', type: :system do
 
   it 'I can see the username of each commentor.' do
     post = FactoryBot.create(:post)
-    users = FactoryBot.create_list(:user, 2, name: ['Lilly', 'Alan'])
-    FactoryBot.create_list(:comment, 6, post: post, user: users)
+    users = FactoryBot.create_list(:user, 2, name: %w[Lilly Alan])
+    FactoryBot.create_list(:comment, 6, post:, user: users)
     visit user_post_path(post.author, post)
     sleep(1)
     expect(page).to have_text('Lilly:', count: 3)
@@ -56,10 +56,10 @@ RSpec.describe 'When I open user show page', type: :system do
 
   it 'I can see the comment each commentor left.' do
     post = FactoryBot.create(:post)
-    comments = FactoryBot.create_list(:comment, 6, post: post)
+    comments = FactoryBot.create_list(:comment, 6, post:)
     visit user_post_path(post.author, post)
     sleep(1)
-    comments.each_with_index do |comment, i|
+    comments.each_with_index do |_comment, i|
       expect(page).to have_content("Comment ##{i + 1}")
     end
   end
