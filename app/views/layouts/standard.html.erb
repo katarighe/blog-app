@@ -10,10 +10,12 @@
     <%= javascript_importmap_tags %>
   </head>
    
-   <body>
-      <div id = "container">
-        <%= yield -%>
-      </div>
- 
-   </body>
+  <body>
+    <div id="welcome">
+      <h1>Welcome to Blog App</h1>
+      <p class="notice"><%= notice %></p>
+      <p class="alert"><%= alert %></p>
+      <%= yield %>
+    </div>
+  </body>
 </html>
