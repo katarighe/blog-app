@@ -18,7 +18,7 @@ li {
   list-style-type: none;
 }
 
-#post {
+.post {
   display: block;
 }
 
@@ -28,7 +28,7 @@ li {
   min-height: 100vh;
 }
 
-#user-container {
+.user {
   display: flex;
   height: 7rem;
 }
@@ -39,20 +39,20 @@ li {
   height: 28rem;
 }
 
-#user-text,
-#post {
+.user-text,
+.post {
   border: 1px solid #5e5f61;
   background-color: #3139ad;
   color: #d1d1d1;
 }
 
 #user-biography,
-#post,
-#comment-container {
+.post,
+.comments-container {
   padding: 0.5rem;
 }
 
-#user-text {
+.user-text {
   padding: 1rem;
   display: flex;
   align-items: center;
@@ -60,11 +60,11 @@ li {
   flex: 5;
 }
 
-#user-text p {
+.user-text p {
   align-self: flex-end;
 }
 
-#user-photo {
+.user-photo {
   flex: 1;
 }
 
@@ -97,7 +97,7 @@ h3 {
   color: #3139ad;
 }
 
-#comment-container,
+.comments-container,
 #user-biography {
   border: 1px solid #9f9ae7;
   background-color: #665ae7;
@@ -109,6 +109,6 @@ h3 {
   flex: 1;
 }
 
-#comment {
+.comment {
   font-style: italic;
 }
