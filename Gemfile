@@ -49,6 +49,7 @@ group :development, :test do
   gem 'database_cleaner'
   gem 'debug', platforms: %i[mri mswin mswin64 mingw x64_mingw]
   gem 'factory_bot_rails'
+  gem 'faker'
   gem 'rails-controller-testing'
   gem 'rspec-rails'
   gem 'will_paginate'
