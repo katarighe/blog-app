@@ -2,20 +2,27 @@
 
 <html>
   <head>
-    <title>Blog App</title>
+    <title>BlogApp</title>
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
+
     <%= stylesheet_link_tag "style", "data-turbo-track": "reload" %>
     <%= javascript_importmap_tags %>
   </head>
    
-  <body>
-    <div id="welcome">
-      <h1>Welcome to Blog App</h1>
+   <body>
+    <header>
+      <% if current_user %>
+        <%= link_to "Sign out", destroy_user_session_path, 
+        'data-turbo-method': :delete %>
+      <% end %>
+    </header>
+
+    <main id = "container">
       <p class="notice"><%= notice %></p>
       <p class="alert"><%= alert %></p>
-      <%= yield %>
-    </div>
+      <%= yield -%>
+    </main>
   </body>
 </html>
