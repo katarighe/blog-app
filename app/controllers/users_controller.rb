@@ -1,6 +1,7 @@
 class UsersController < ApplicationController
+  layout 'standard'
   def index
-    @users = User.all
+    @users = User.order(id: :asc)
   end
 
   def show
