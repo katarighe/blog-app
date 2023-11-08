@@ -1,13 +1,21 @@
 class PostsController < ApplicationController
-  layout 'standard'
   def index
     @user = User.find(params[:user_id])
-    @posts = Post.where(author_id: params[:user_id]).order(id: :asc)
-    @posts = @posts.paginate(page: params[:page], per_page: 5)
+    # retrieve posts associated to @user and
+    # eager-loading the associated comments
+    @posts = @user.posts.includes(comments: [:user])
+  rescue ActiveRecord::RecordNotFound
+    # Handle the case where the user is not found
+    # Redirect to the root page
+    flash[:error] = 'User not found.'
+    redirect_to root_path
   end
 
   def show
-    @post = Post.find(params[:id])
+    @user = User.find(params[:user_id])
+    # retrieve the post associated to @user and
+    # eager-loading the associated comments
+    @post = @user.posts.includes(:comments).find(params[:id])
   end
 
   def new
