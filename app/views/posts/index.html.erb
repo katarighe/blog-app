@@ -34,7 +34,7 @@
           Likes: <%= post.likes_counter.nil? ? "0" : post.likes_counter %>
         </span>
     </div>
-    <%= link_to "Read Post", user_post_path(user.id, post), class: "btn btn-primary" %>
+    <%= link_to "Read Post", user_post_path(user_id: post.author_id, id: post.id), class: "btn btn-primary" %>
     </div>
     <div class="mb-4">
       <% post.five_recent_comments.each do |comment| %>

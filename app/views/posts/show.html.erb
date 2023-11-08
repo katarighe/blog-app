@@ -29,6 +29,15 @@
   <% end %>
 </div>
 
+  <% @post.comments.each do |comment| %>
+    <p>
+      <%= comment.author.name %>: <%= comment.text %>
+    </p>
+    <% if can? :destroy, comment %>
+      <%= button_to 'Delete', post_comment_path(@post, comment),  class:"btn-delete btn-del-comment" , method: :delete, data: { confirm: 'Are you sure?' } %>
+    <% end %>
+  <% end %>
+
 <div class="d-flex my-2">
   <%= render partial: "likes/like_action", locals: { post: @post }, class: 'mx-4' %>
   <%= link_to 'New Comment', new_user_post_comment_path(post_id: params[:id]), class: "mx-4 btn btn-primary" %>
