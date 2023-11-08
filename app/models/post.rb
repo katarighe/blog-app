@@ -1,7 +1,9 @@
 class Post < ApplicationRecord
   belongs_to :author, class_name: 'User', foreign_key: 'author_id'
-  has_many :comments
-  has_many :likes
+  has_many :comments, dependent: :destroy, foreign_key: :post_id
+  has_many :likes, dependent: :destroy, foreign_key: :post_id
+  after_create :update_post_counter
+  after_destroy :update_post_counter
   after_save :update_post_counter
 
   def five_recent_comments
