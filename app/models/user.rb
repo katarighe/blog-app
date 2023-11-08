@@ -18,6 +18,10 @@ class User < ApplicationRecord
 
   # PostsCounter must be an integer greater than or equal to zero.
   validates :posts_counter, numericality: { allow_nil: true, only_integer: true, greater_than_or_equal_to: 0 }
+
+  def admin?
+    role == 'admin'
+  end
 end
 
 # <%= render 'posts/all_posts' %>
