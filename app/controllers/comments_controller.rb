@@ -3,6 +3,13 @@ class CommentsController < ApplicationController
     @comment = Comment.new
   end
 
+  def destroy
+    @comment = Comment.find(params[:id])
+    authorize! :destroy, @comment
+    @comment.destroy
+    redirect_to post_path(@comment.post)
+  end
+
   def create
     @comment = Comment.new(comments_param)
     @comment.user = current_user
