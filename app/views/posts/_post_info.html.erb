@@ -2,6 +2,10 @@
 
 <p><%= truncate(post.text, length: 100, omission: '...') %></p>
 
+<% if can? :destroy, post %>
+    <%= button_to 'Delete post', destroy_post_path(post), method: :delete, class:"btn-delete" %>
+<% end %>
+
 <p class="counter">
   Comments: <%= post.comments_counter.to_i %>, Likes: <%= post.likes_counter.to_i %>
 </p>

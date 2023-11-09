@@ -1,8 +1,9 @@
 source 'https://rubygems.org'
 gem 'rubocop', '>= 1.0', '< 2.0'
 
-ruby '3.0.2'
+ruby '3.2.2'
 
+gem 'cancancan', '~> 3.0'
 gem 'devise'
 gem 'mailcatcher'
 gem 'sass-rails'

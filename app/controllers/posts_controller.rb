@@ -1,4 +1,5 @@
 class PostsController < ApplicationController
+  before_action :load_and_authorize_resource
   def index
     @user = User.find(params[:user_id])
     # retrieve posts associated to @user and
@@ -32,5 +33,11 @@ class PostsController < ApplicationController
       flash.now[:error] = 'Error: Post could not be created!'
       render :new, locals: { post: @post }
     end
+  end
+
+  private
+
+  def load_and_authorize_resource
+    # Load and authorize resources as needed
   end
 end
