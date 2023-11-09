@@ -33,11 +33,11 @@ class PostsController < ApplicationController
       flash.now[:error] = 'Error: Post could not be created!'
       render :new, locals: { post: @post }
     end
+  end
+  
+  private
 
-    private
-
-    def load_and_authorize_resource
+  def load_and_authorize_resource
       # Load and authorize resources as needed
-    end
   end
 end
