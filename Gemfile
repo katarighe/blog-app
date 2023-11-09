@@ -1,7 +1,7 @@
 source 'https://rubygems.org'
 gem 'rubocop', '>= 1.0', '< 2.0'
 
-ruby '3.2.2'
+ruby '3.0.2'
 
 gem 'cancancan', '~> 3.0'
 gem 'devise'
@@ -9,6 +9,7 @@ gem 'mailcatcher'
 gem 'sass-rails'
 
 # Bundle edge Rails instead: gem "rails", github: "rails/rails", branch: "main"
+gem 'active_model_serializers', '~> 0.10.13'
 gem 'rails', '~> 7.1.1'
 
 # The original asset pipeline for Rails [https://github.com/rails/sprockets-rails]
