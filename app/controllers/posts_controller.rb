@@ -34,10 +34,10 @@ class PostsController < ApplicationController
       render :new, locals: { post: @post }
     end
   end
-  
+
   private
 
   def load_and_authorize_resource
-      # Load and authorize resources as needed
+    # Load and authorize resources as needed
   end
 end
