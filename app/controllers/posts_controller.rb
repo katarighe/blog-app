@@ -35,9 +35,9 @@ class PostsController < ApplicationController
     end
 
     private
-    
+
     def load_and_authorize_resource
-    # Load and authorize resources as needed
+      # Load and authorize resources as needed
     end
   end
 end
