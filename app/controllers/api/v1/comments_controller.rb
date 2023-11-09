@@ -4,7 +4,7 @@ end
 class Api::V1::CommentsController < ApplicationController
   load_and_authorize_resource
   rescue_from CanCan::AccessDenied do |_exception|
-    redirect_to root_path, notice: 'Access denied'
+    redirect_to root_path, notice: 'Access Denied!'
   end
 
   def create
