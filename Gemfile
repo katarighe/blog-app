@@ -6,6 +6,7 @@ ruby '3.0.2'
 gem 'cancancan', '~> 3.0'
 gem 'devise'
 gem 'mailcatcher'
+gem 'rswag'
 gem 'sass-rails'
 
 # Bundle edge Rails instead: gem "rails", github: "rails/rails", branch: "main"

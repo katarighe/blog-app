@@ -1,0 +1,155 @@
+---
+openapi: 3.0.1
+info:
+  title: API V1
+  version: v1
+paths:
+  "/api/v1/users/{user_id}/posts/{post_id}/comments":
+    get:
+      summary: Retrieves comments for a specific post
+      tags:
+      - Comments
+      parameters:
+      - name: user_id
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: post_id
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: comments retrieved
+          content:
+            application/json:
+              examples:
+                example_0:
+                  value:
+                  - id: 1
+                    text: Comment 1 text
+                    author_id: 1
+                    post_id: 1
+                  - id: 2
+                    text: Comment 2 text
+                    author_id: 2
+                    post_id: 1
+    post:
+      summary: Creates a comment
+      tags:
+      - Comments
+      parameters:
+      - name: user_id
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: post_id
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        '201':
+          description: comment created
+          content:
+            application/json:
+              examples:
+                example_0:
+                  value:
+                    id: 3
+                    text: Example Comment
+                    author_id: 1
+                    post_id: 1
+        '422':
+          description: Invalid request
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                text:
+                  type: string
+                author_id:
+                  type: integer
+                post_id:
+                  type: integer
+              required:
+              - text
+              - author_id
+              - post_id
+  "/api/v1/users/{id}":
+    get:
+      summary: Retrieves a user's posts
+      tags:
+      - Posts
+      parameters:
+      - name: id
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: user found
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  id:
+                    type: integer
+                  name:
+                    type: string
+                  bio:
+                    type: string
+                  photo:
+                    type: string
+                  posts:
+                    type: object
+                    properties:
+                      id:
+                        type: integer
+                      title:
+                        type: string
+                      text:
+                        type: string
+                required:
+                - id
+                - name
+                - posts
+            application/xml:
+              schema:
+                type: object
+                properties:
+                  id:
+                    type: integer
+                  name:
+                    type: string
+                  bio:
+                    type: string
+                  photo:
+                    type: string
+                  posts:
+                    type: object
+                    properties:
+                      id:
+                        type: integer
+                      title:
+                        type: string
+                      text:
+                        type: string
+                required:
+                - id
+                - name
+                - posts
+        '404':
+          description: user not found
+servers:
+- url: https://{defaultHost}
+  variables:
+    defaultHost:
+      default: www.example.com
