@@ -7,6 +7,7 @@ gem 'cancancan', '~> 3.0'
 gem 'devise'
 gem 'mailcatcher'
 gem 'sass-rails'
+gem 'rswag'
 
 # Bundle edge Rails instead: gem "rails", github: "rails/rails", branch: "main"
 gem 'active_model_serializers', '~> 0.10.13'
