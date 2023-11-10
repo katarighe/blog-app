@@ -111,7 +111,16 @@ Example command:
 
 ### Run tests
 
-- Tests are not available yet, please stay tuned for it.
+To run tests, run the following command:
+> rspec
+
+You can also check linter errors by running these commands:
+> rubocop
+
+For testing the confirmation emails:
+> gem install mailcatcher
+
+Open [http://localhost:1080](http://localhost:1080) to view it in your browser.
 
 ### Deployment
 
